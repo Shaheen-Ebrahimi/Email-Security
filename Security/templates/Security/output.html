@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<link rel="apple-touch-icon" sizes="180x180" href="{% static 'Security/icon/apple-touch-icon.png' %}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{% static 'Security/icon/favicon-32x32.png' %}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{% static 'Security/icon/favicon-16x16.png' %}">
+		<link rel="manifest" href="{% static 'Security/icon/site.webmanifest' %}">
+		<link rel="mask-icon" href="{% static 'Security/icon/safari-pinned-tab.svg' %}" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+		<title>SECURIFY | GET STARTED</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'Security/assets/css/main.css' %}" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="/">SECURIFY</a></div>
+				<a href="#menu">MENU</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="/start">Get Started</a></li>
+					<li><a href="/about">About</a></li>
+				</ul>
+			</nav>
+
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>YOUR INFORMATION HAS BEEN PROCESSED</p>
+						<h2>THANK YOU</h2>
+					</header>
+				</div>
+			</section>
+
+            <div id="main" class="container" method='post' action='/start/'>
+                <h2 id="output" class='6u 12u$(medium)'>SENSITIVE DATA</h2>
+					<br></br>
+						
+						<div class = 'row'>
+						{% for x in data %}
+							<div class='6u 12u$(medium)'>
+								<dt> <b>Date: </b> {{ x.date }}</dt>
+								<dt> <b>Sender: </b> {{ x.sender }}</dt>
+								<dt><b>Subject: </b> {{ x.subject }}</dt>
+								<dt><b>Hazards: </b>
+									<ul>
+										<dd><b>- Tags: </b>
+											{% for val in x.hazard.tags %}
+											{{ val }}
+											{% endfor %} </dd>
+										<dd><b>- Credit Card: </b>
+										{% for val in x.hazard.credit %}
+											{{ val }}
+											{% endfor %}
+											</dd>
+										<dd><b>- Social Security: </b>
+										{% for val in x.hazard.social %}
+											{{ val }}
+											{% endfor %}
+											</dd>
+									</ul>
+								</dt>
+							</div>
+						{% endfor %}
+						</div>
+					<br></br>
+					<div class="12u$">
+						<form action='/start/'>
+							<p><input type="submit" value="SUBMIT ANOTHER" /></p>
+						</form>
+					</div><br></br>
+					
+            </div>
+        
+        <!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://twitter.com/?lang=en" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.facebook.com/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.instagram.com/?hl=en" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; SECURIFY. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'Security/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'Security/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'Security/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'Security/assets/js/util.js' %}"></script>
+			<script src="{% static 'Security/assets/js/main.js' %}"></script>
+
+	</body>
+</html>

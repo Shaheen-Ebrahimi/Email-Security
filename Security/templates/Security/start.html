@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<link rel="apple-touch-icon" sizes="180x180" href="{% static 'Security/icon/apple-touch-icon.png' %}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{% static 'Security/icon/favicon-32x32.png' %}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{% static 'Security/icon/favicon-16x16.png' %}">
+		<link rel="manifest" href="{% static 'Security/icon/site.webmanifest' %}">
+		<link rel="mask-icon" href="{% static 'Security/icon/safari-pinned-tab.svg' %}" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+		<title>SECURIFY | GET STARTED</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'Security/assets/css/main.css' %}" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="/">SECURIFY</a></div>
+				<a href="#menu">MENU</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="/start">Get Started</a></li>
+					<li><a href="/about">About</a></li>
+				</ul>
+			</nav>
+
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>ENTER YOUR EMAIL LOGIN INFORMATION</p>
+						<h2>GET STARTED</h2>
+					</header>
+				</div>
+			</section>
+		
+		<!-- Form -->
+			<div id="main" class="container">
+
+				<!-- Elements -->
+					<h2 id="form" class='align-center'>CREDENTIALS<br></br></h2>
+					<div class="align-center">
+						<div class="align-center">
+
+								<form method="post" action="/data/"> {% csrf_token %}
+									<div class="row uniform">
+										<div class="-3u 6u">
+											<input type="email" name="email" id="email" value="" placeholder="Email" />
+										</div>
+										<div class="-3u 6u">
+											<input type="password" name="password" id="password" value="" placeholder="Password" />
+										</div>
+										<div class="-3u 6u">
+											<div class="select-wrapper">
+												<select name="category" id="category">
+													<option value="25">25 Emails</option>
+													<option value="50">50 Emails</option>
+													<option value="100">100 Emails</option>
+													<option value="200">200 Emails</option>
+												</select>
+											</div>
+										</div>
+										<!-- Break -->
+										<div class="12u$">
+											<input type="checkbox" id="info" name="info" checked>
+											<label for="info">ACCEPT TERMS OF SERVICE</label>
+										</div>
+										<!-- Break -->
+										<div class="12u$">
+											<ul class="actions">
+												<li><input type="submit" value="ENTER" href='/start/'/></li>
+											</ul>
+										</div><br></br>
+									</div>
+								</form>
+
+								<hr />
+
+						<br></br>
+						<h2 id="form" class='align-center'>TERMS OF SERVICE<br></br></h2>
+						<dl>
+							<dt>Privacy</dt>
+							<dd>
+								<p>Securify does not store nor distribute any of the submitted data.<br></br> All logins and scaped data is immediately discarded after display.</p>
+							</dd>
+							<dt>Liability</dt>
+							<dd>
+								<p>Securify is not liably for any scraped data being targeted by malicious third-party users.<br></br>By submitting your email login information, you agree to our terms of service.</p>
+							</dd>
+						</dl>
+						<br></br>
+
+						</div>
+					</div>
+			</div>
+
+			
+
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="https://twitter.com/?lang=en" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.facebook.com/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.instagram.com/?hl=en" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; SECURIFY. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'Security/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'Security/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'Security/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'Security/assets/js/util.js' %}"></script>
+			<script src="{% static 'Security/assets/js/main.js' %}"></script>
+
+	</body>
+</html>
